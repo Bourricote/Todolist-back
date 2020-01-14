@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ApiResource()
+ * @ApiFilter(OrderFilter::class, properties={"isChecked": "ASC"})
+ * @ApiFilter(SearchFilter::class, properties={"category": "exact"})
  * @ORM\Entity(repositoryClass="App\Repository\ItemRepository")
  */
 class Item
