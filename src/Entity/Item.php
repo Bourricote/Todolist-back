@@ -10,7 +10,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ApiResource()
- * @ApiFilter(OrderFilter::class, properties={"isChecked": "ASC"})
+ * @ApiFilter(OrderFilter::class, properties={"isChecked" : "ASC"})
  * @ApiFilter(SearchFilter::class, properties={"category": "exact"})
  * @ORM\Entity(repositoryClass="App\Repository\ItemRepository")
  */
